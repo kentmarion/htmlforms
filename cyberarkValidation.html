@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+
+    <head>
+        <title>Validation of server record in CyberArk</title>
+
+        <style>
+                form {
+                    /* Just to center the form on the page */
+                    margin: 0 auto;
+                    width: 450px;
+                    /* To see the outline of the form */
+                    padding: 2em;
+                    border: 2px solid #ccc;
+                    border-radius: 1em;
+                }
+    
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    margin: 1;
+                }
+    
+                form li + li {
+                    margin-top: 1em;
+                }
+                
+                body {
+			        background-color: gray;
+		        }
+                
+                label {
+                    /* To make sure that all labels have the same size and are properly aligned */
+                    display: inline-block;
+                    width: 95px;
+                    text-align: right;
+                }
+    
+                input,                 
+                textarea {
+                    /* To make sure that all text fields have the same font settings By default, textareas have a monospace font */
+                    font: 1em sans-serif;
+                    /* To give the same size to all text fields */
+                    width: 300px;
+                    box-sizing: border-box; /* To harmonize the look & feel of text field border */
+                    border: 1px solid #999;
+                }
+    
+                /*input:focus,
+                textarea:focus {
+                    /* To give a little highlight on active elements */
+                    /*border-color: rgb(255, 0, 0);*/
+               /*} */
+    
+                textarea {
+                    /* To properly align multiline text fields with their labels */
+                    vertical-align: middle;
+                    /* To give enough room to type some text */
+                    height: 15em;
+                }
+    
+                .button {
+                    /* To position the buttons to the same position of the text fields */
+                    padding-left: 90px;
+                    /* same size as the label elements */
+                }
+    
+                button {
+                    /* This extra margin represent roughly the same space as the space between the labels and their text fields */
+                    margin-left: .70em;
+                    background-color: #555555;
+                    color:white;
+                    padding: 10px 16px;
+                    font-size: 15px;
+                    cursor: pointer;
+                }
+            </style>
+        
+    </head>
+
+    <body>
+        <div id="form wrapper" style=test-align:500px margin=auto>
+            <form action="/py/validationCAget.py" method="post">
+                <ul>
+
+
+                    <h2><center>CyberArk Validation Requirements</center></h2>
+
+                    <li>
+                        <label for="recipient's e-mail address">E-mail:</label>
+                        <input type="email" id="email_address" name="email_address" onfocus="if (this.value=='example@optum.com') this.value = ''" type="text" value="example@optum.com" required>
+                    </li>
+                    
+
+                         
+
+                    <li>
+                        <label for="list of servers">Server(s):</label>
+                        <textarea id="server_list" name="server_list" required></textarea>
+                    </li>
+
+                    <li class="button">
+                        <button type="submit">Submit</button>
+                    </li>
+
+                                       
+                </ul>
+            </form>
+        </div>
+    </body>
+</html>
